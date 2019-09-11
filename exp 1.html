@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hien cac so nguyen to nho hon 1 so cho truoc</title>
+</head>
+<body>
+<p> Enter a number</p>
+<input type="text" id="insert" placeholder="Enter number">
+<input type="button" value="Show" onclick="show()">
+<p id="result"></p>
+<script>
+    function show() {
+       let num = document.getElementById("insert").value;
+        let checkNum = 2;
+        let data="";
+        while (checkNum< num) {
+            if (isPrimeNumber(checkNum)) {
+                data+=  " " + checkNum;
+                document.getElementById("result").innerHTML="Day so nguyen to can in ra la: "+"<br>"+data;
+            }
+            checkNum++;
+        }
+        function isPrimeNumber(num) {
+            let squareRoot = Math.sqrt(num);
+            for (let i = 2; i <= squareRoot; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+</script>
+</body>
+</html>
